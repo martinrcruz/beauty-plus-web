@@ -1,0 +1,25 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+$subpage-title-bg: white;
+$subpage-title-color: variables.$negro2;
+
+.subpage-title{
+
+    width: 100%;
+    background-color: $subpage-title-bg;
+    color:$subpage-title-color;
+
+    &__wrapper {
+        margin: 0 auto;
+        width: min(100%, variables.$default-width);
+        height: 12rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-top: 3.75rem;
+        padding-left: 1rem;
+    }
+}

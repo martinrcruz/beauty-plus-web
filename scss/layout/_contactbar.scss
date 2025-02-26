@@ -1,0 +1,49 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.contactbar {
+    width: 100%;
+    background-color: variables.$contactbar-bg;
+    border-bottom: 1px solid variables.$negro1;
+    max-height: 3rem;
+
+    &__wrapper {
+        margin: 0 auto;
+        width: min(variables.$default-width, 100%);
+        background-color: variables.$contactbar-bg;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            height: fit-content;
+            color: variables.$contactbar-color;
+            font-size: fonts.$fs-250;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            svg {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: bp.$tablet) {
+    .contactbar {
+        &__wrapper {
+            a {
+                flex:1;
+                padding-block: .7rem;
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}

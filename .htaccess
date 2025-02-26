@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+
+
+
+# Redireccionar todas las solicitudes que no sean archivos o directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+    # Reescribir las URLs amigables
+    RewriteRule / index.php [NC,L]
+    RewriteRule ^puntos$ puntos.php [NC,L]
+    RewriteRule ^niveles$ niveles.php [NC,L]
+    RewriteRule ^ventajas$ ventajas.php [NC,L]
+    RewriteRule ^promociones$ promociones.php [NC,L]
+    RewriteRule ^tarjetaregalo$ tarjetaregalo.php [NC,L]
+    RewriteRule ^servicios$ servicios.php [NC,L]
+    RewriteRule ^contacto$ contacto.php [NC,L]
+    RewriteRule ^acceso$ acceso.php [NC,L]
+    RewriteRule ^equivalencias$ equivalencias.php [NC,L]
+    RewriteRule ^colaboraciones$ colaboraciones.php [NC,L]
+    RewriteRule ^recomendaciones$ recomendaciones.php [NC,L]
+
+    # Si no coincide ninguna regla anterior, enviar todo a index.php
+</IfModule>

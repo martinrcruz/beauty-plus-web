@@ -1,0 +1,48 @@
+@use '../abstracts/variables';
+@use '../core/colors';
+@use '../core/fonts';
+@use '../core/bp';
+
+$bg: variables.$color2;
+$ff: fonts.$ff-primary;
+$fs: fonts.$fs-450;
+
+.form{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+
+
+
+    h1{
+        font-family: fonts.$ff-primary;
+        font-size: fonts.$fs-750;
+        line-height: fonts.$fs-750;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        width: 100%;            
+    }
+
+    &-button{
+        margin-top: 2rem;
+    }
+    label{
+        display: none;                
+    }
+    input, textarea{
+        font-family: $ff;
+        font-size: $fs;
+        line-height: 3rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding-inline: 1rem;
+    }
+
+    button[type="submit"]{
+        background-color: transparent;
+        text-transform: uppercase;
+        font-size: 160%;
+    }
+}

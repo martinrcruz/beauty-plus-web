@@ -1,0 +1,29 @@
+<?php
+declare(strict_types=1);
+
+return[
+    'blanco'=>[
+        'name'=>'Blanco',
+        'price'=>999,
+        'currency'=>'€',
+        'background-color'=>'white'
+    ],
+    'silver'=>[
+        'name'=>'Silver',
+        'price'=>1999,
+        'currency'=>'€',
+        'background-color'=>'silver'
+    ],
+    'gold'=>[
+        'name'=>'Gold',
+        'price'=>3999,
+        'currency'=>'€',
+        'background-color'=>'gold'
+    ],
+    'paltinum'=>[
+        'name'=>'Platinum',
+        'price'=>4000,
+        'currency'=>'€',
+        'background-color'=>'#E5E4E2'
+    ],
+];

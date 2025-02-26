@@ -1,0 +1,8 @@
+@use 'sass:color';
+$c-dark: hsl(0, 0%, 30%);
+$c-primary: hsl(209, 74%, 37%);
+$c-secondary: hsl(200, 74%, 71%);
+$c-tertiary: hsl(0, 0%, 82%);
+$c-light: hsl(0, 0%, 100%);
+$c-primary-text: color.adjust($c-primary, $lightness: -10%);
+$c-grey-text: hsl(0, 0%, 50%);

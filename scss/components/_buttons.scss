@@ -1,0 +1,51 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.button {
+    //width: fit-content;
+    display: flex;
+    font-display: row;
+    justify-content: center;
+    align-items: center;
+
+    font-family: variables.$button-ff;
+    font-size: variables.$button-fs;
+    line-height: variables.$button-lh;
+    color: variables.$button-color !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: variables.$button-bg;
+    
+    padding: .75rem 2rem;
+    overflow: hidden;
+    
+    border-radius: 100vw;   
+    border: none; 
+
+    transition: color 250ms ease-out;
+    
+    
+    z-index: 0;
+    position: relative;
+    
+    &::after{
+        position: absolute;
+        content: '';
+        inset: 0 -1rem 0 -1rem;
+        background-color: variables.$button-color;
+        z-index: -1;
+        transform: skewX(-45deg) translateX(-105%);
+        transition: transform 250ms ease-out;
+    }
+    
+    &:hover{
+        color: variables.$button-bg !important;
+        &::after{
+            transform: skewX(-45deg)  translateX(0);
+
+        }
+    }
+    
+}

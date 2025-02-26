@@ -1,0 +1,58 @@
+// Mobile: 280 x 653
+// Mobile: 360 x 640
+// Mobile: 375 x 667
+// Mobile: 360 x 720
+// iPhone X: 375 x 812
+// Pixel 2: 411 x 731
+// Tablet: 768 x 1024
+// Laptop: 1366 x 768
+// High-res laptop or desktop: 1920 x 1080
+
+$mobile-nano: 280px;
+$mobile-min: 360px;
+$mobile-med: 375px;
+$mobile-max: 441px;
+$tablet: 768px;
+$laptop: 1366px;
+$desktop: 1920px;
+
+@mixin all {
+    @media screen and (max-width: 1000000px) {
+        @content;
+    }
+}
+@mixin mobile-nano {
+    @media screen and (max-width: $mobile-nano) {
+        @content;
+    }
+}
+@mixin mobile-min {
+    @media screen and (max-width: $mobile-min) {
+        @content;
+    }
+}
+@mixin mobile-med {
+    @media screen and (max-width: $mobile-med) {
+        @content;
+    }
+}
+@mixin mobile-max {
+    @media screen and (max-width: $mobile-max) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (max-width: $desktop) {
+        @content;
+    }
+}

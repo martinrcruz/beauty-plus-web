@@ -1,0 +1,36 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.section-custom{
+    width: 100%;
+
+    &__wrapper{
+           width: variables.$default-width; 
+           margin: 0 auto;
+
+           &-style-1{
+            padding-top:4rem;
+           }
+    }
+    &__title{
+        font-family: fonts.$ff-primary;
+        font-weight: normal;
+        font-size: fonts.$fs-800;
+        line-height: fonts.$lh-750;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    &__subtitle{
+        font-family: fonts.$ff-primary;
+        font-weight: normal;
+        font-size: fonts.$fs-750;
+        line-height: fonts.$lh-650;
+        text-align: left;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+}

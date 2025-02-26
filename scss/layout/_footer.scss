@@ -1,0 +1,41 @@
+@use '../abstracts/variables';
+@use '../core/colors';
+@use '../core/fonts';
+@use '../core/bp';
+
+.footer {
+    width: 100%;
+    color: white;
+    background-color: variables.$negro2;
+
+    &__wrapper {
+        color: inherit;
+        margin: 0 auto;
+        width: min(100%, variables.$default-width);
+        height: 100%;
+        padding: 4rem 3rem 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    &__firma{
+        width: min(400px, 100%);
+        margin: 0 auto;
+    }
+
+    &__links{
+        ul{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap:1rem;
+        }
+    }
+
+}

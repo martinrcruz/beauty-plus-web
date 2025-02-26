@@ -1,0 +1,14 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.section-custom__title{
+    font-family: fonts.$ff-primary;
+    font-weight: normal;
+    font-size: fonts.$fs-800;
+    line-height: fonts.$lh-750;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}

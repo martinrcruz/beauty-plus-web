@@ -1,0 +1,75 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.access-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 2rem;
+    box-sizing: border-box;
+    background-color: variables.$access-button-bg;
+    border-radius: 100vw;
+    padding-block: 3px;
+
+    
+    a {
+        display: flex;
+        height:100%;
+        color: variables.$access-button-color;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: .5rem;
+        padding-right: 1px;
+        padding-block: 1px;
+        gap: .5rem;
+        .access-button-text{
+            flex:1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-transform: uppercase;
+            color: variables.$access-button-color;
+            padding-left: .5rem;
+        }
+        .access-button-icon{
+            display: block;
+            height: 100%;
+            width: 2rem;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            svg{
+                color: variables.$access-button-icon-color;
+                width: 100%;
+                height: 100%;
+                object-fit:scale-down;
+                object-position: center;
+            }
+        }
+    }
+
+    &__signup{
+        background-color: variables.$access-button-signup-bg;
+        color: variables.$access-button-signup-color;
+        padding-inline: 1rem;
+        padding-block: 1rem;
+        
+        > a{
+            color: inherit;
+            font-weight: bold;
+            padding: 0;
+            > .access-button-text{
+                padding: 0;
+                color: inherit;
+            }
+
+        }
+    }
+
+}

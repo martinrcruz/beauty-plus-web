@@ -1,0 +1,183 @@
+@use '../core/bp';
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+
+$bg-bar: #C49F5C;
+$left-margin: 12rem;
+$left-firma: 24rem;
+$color-firma: white;
+$barra-bottom: 40px;
+$text-color: variables.$negro3;
+
+.hero {
+    display: flex;
+    width: 100%;
+    min-height: 850px;
+    max-height: 850px;
+    height: 850px;
+    background-color: variables.$hero-bg;
+    color: variables.$hero-color;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin:0;
+    overflow-y: hidden;
+    position: relative;
+
+    &__whatsapp{
+        position: absolute;
+        bottom: 1.5rem;
+        right: 15em;
+        width: 3rem;
+        aspect-ratio: 1 / 1;
+        padding:0;
+        transform: scale(1) translateX(0) translateY(0);
+        transition: transform 300ms ease, filter 300ms ease;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        z-index: 9999;
+        
+        &:hover{
+            transform: scale(1.5) translateX(5px) translateY(-5px);
+            filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.3));
+            
+        }
+        
+        svg{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+
+    }
+
+    &__barra{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: $barra-bottom;
+        height: 120px;
+        background-color: $bg-bar;
+        &-firma{
+            margin: 0 auto;
+            width:min(variables.$default-width, 100%);
+            height: 100%;
+            padding-block: 1.5rem;
+
+            svg{
+                margin-left: $left-firma;
+                color: $color-firma;
+                height: 100%;
+                width: auto;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+
+    &__wrapper{
+        width: min(variables.$default-width, 100%);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+
+        * {
+            color: variables.$hero-color;
+        }
+    }
+
+    &__content{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 200px;
+        left: $left-margin;
+        width: 21rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-logo{
+            width: 100%;
+            padding-inline: .5rem;
+            svg{
+                width: 100%;
+                height: auto;
+            }
+
+            h1{
+                display: none;
+            }
+        }
+        &-text{
+            padding-top: 4rem;
+
+            text-align: center;
+            h2{
+                font-family: fonts.$ff-primary;
+                font-size: 2.9rem;
+                padding-bottom: 3rem;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+
+                    inset: 0 0 1rem 0;
+                    transform: scaleX(60%);
+                    border-bottom: 2px solid black;
+                }
+            }
+            
+            p{
+                font-family: fonts.$ff-primary;
+                font-size: 1.6rem;
+                color: $text-color;
+            }
+        }
+
+    }
+
+    &__man{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 12rem;
+        height: 230px;
+       //z-index: 1;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__woman{
+        content: '';
+        position: absolute;
+        bottom: $barra-bottom;
+        top:0;
+        right: 0;
+        //z-index: 2;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__cta{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding-block: .5rem;
+    }
+}
+

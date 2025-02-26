@@ -1,0 +1,118 @@
+@use '../../core/fonts';
+@use '../../core/colors';
+@use '../../abstracts/variables';
+@use '../../core/bp';
+@use './niveles_variables' as niveles;
+
+
+.niveles {
+    background-color: niveles.$bg;
+    position: relative;
+
+    &::after{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4rem;
+        background-color: variables.$negro4;
+        z-index: 0;
+    }
+
+    &__wrapper {
+        width: min(100%, variables.$default-width);
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-block: 9.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: relative;
+    }
+
+    &__background-picture{
+        position: absolute;
+        bottom: 0;
+        left:3rem;
+        z-index: 1;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+    }
+
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &-header{
+            width: 27rem;
+            margin-right: 12rem;
+        }
+        &-body{
+            width: 27rem;
+            margin-right: 12rem;
+            &-text{
+                font-family: variables.$descriptionFontFamily;
+                font-size: variables.$descriptionsFontSize;
+                line-height: variables.$descriptionLineHeight;
+                color: variables.$descriptionColor;
+                text-align:  variables.$descriptionTextAlign;
+            }
+
+        }
+    }
+
+    &__items{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: variables.$descriptionFontFamily;
+        color: variables.$descriptionColor;
+        margin-top: 3rem;
+        margin-right: 9rem;
+        z-index: 1;
+
+        gap: .5rem;
+    }
+
+    &__item{
+        width: 9rem;
+        aspect-ratio: 1 / 1;
+        list-style: none;
+        
+        &-wrapper{
+            width: 100%;
+            height: 100%;
+            border-radius: 100vw;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 1.5rem;
+        }
+
+        &-from{
+            font-size: fonts.$fs-450;
+            text-transform: lowercase;
+            padding-bottom: 1rem;
+        }
+        &-price{
+            font-size: fonts.$fs-800;
+        }
+        &-currency{
+            font-size: fonts.$fs-450;
+            font-size: bold;
+        }
+    }
+}

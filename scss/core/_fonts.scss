@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Abel Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: local('Abel Pro'),
+        url('../fonts/abel_pro/woff2/abel_pro.woff2')
+            format('woff2'),
+        url('../fonts/abel_pro/woff/abel_pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Abel Pro';
+    font-weight: 700;
+    font-style:normal;
+    font-display: swap;
+    src: local('Abel Pro'),
+        url('../fonts/abel_pro/woff2/abel_pro_bold.woff2')
+            format('woff2'),
+        url('../fonts/abel_pro/woff/abel_pro_bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Terminal Dosis';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: local('Terminal Dosis'),
+        url('../fonts/terminal-dosis/woff2/terminal-dosis.regular.woff2')
+            format('woff2'),
+        url('../fonts/terminal-dosis/woff/terminal-dosis.regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Terminal Dosis';
+    font-weight: 700;
+    font-style:normal;
+    font-display: swap;
+    src: local('Terminal Dosis'),
+        url('../fonts/terminal-dosis/woff2/terminal-dosis.bold.woff2')
+            format('woff2'),
+        url('../fonts/terminal-dosis/woff/terminal-dosis.bold.woff') format('woff');
+}
+
+$golden-ratio: 1.61803398875;
+
+$ff-primary: 'Abel Pro', sans-serif;
+$ff-secondary: 'Terminal Dosis', sans-serif;
+
+// start: font-weight
+$fw-thin: 100;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-extra-bold: 800;
+$fw-black: 900;
+$fw-ultra-black: 950;
+// end: font-weight
+
+// start: font-sizes
+$fs-100: 0.625rem; // 10px / 0.625 rem
+$fs-150: 0.8rem; // 12px / 0.8 rem
+$fs-200: 0.875rem; // 14px / 0.875 rem
+$fs-250: 0.938rem; // 15px / 0.938 rem
+$fs-300: 1rem; // 16px / 1 rem
+$fs-350: 1.063rem; // 17px / 0.063 rem
+$fs-400: 1.125rem; // 18px / 1.125 rem
+$fs-450: 1.25rem; // 20px / 1.25 rem
+$fs-500: 1.5rem; // 24px / 1.5 rem
+$fs-550: 1.688rem; // 27px / 1.688 rem
+$fs-600: 1.875rem; // 30px / 1.875 rem
+$fs-650: 2.036rem; // 33px / 2.063 rem
+$fs-700: 2.25rem; // 36px / 2.25 rem
+$fs-750: 2.625rem; // 42px / 2.625 rem
+$fs-800: 3rem; // 48px / 3 rem
+$fs-850: 3.25rem; // 52px / 3.25 rem
+$fs-900: 3.75rem; // 60px / 3.75 rem
+$fs-950: 4.125rem; // 66px / 4.125 rem
+$fs-1000: 4.5rem; // 72px / 4.5 rem
+$fs-1050: 4.875rem; // 78px / 4.875 rem
+$fs-1100: 5.25rem; // 84px / 5.25 rem
+// end: font-sizes
+
+// start: line-height
+$lh-100: calc($fs-100 * $golden-ratio);
+$lh-150: calc($fs-150 * $golden-ratio);
+$lh-200: calc($fs-200 * $golden-ratio);
+$lh-250: calc($fs-250 * $golden-ratio);
+$lh-300: calc($fs-300 * $golden-ratio);
+$lh-350: calc($fs-350 * $golden-ratio);
+$lh-400: calc($fs-400 * $golden-ratio);
+$lh-450: calc($fs-450 * $golden-ratio);
+$lh-500: calc($fs-500 * $golden-ratio);
+$lh-550: calc($fs-550 * $golden-ratio);
+$lh-600: calc($fs-600 * $golden-ratio);
+$lh-650: calc($fs-650 * $golden-ratio);
+$lh-700: calc($fs-700 * $golden-ratio);
+$lh-750: calc($fs-750 * $golden-ratio);
+$lh-800: calc($fs-800 * $golden-ratio);
+$lh-850: calc($fs-850 * $golden-ratio);
+$lh-900: calc($fs-900 * $golden-ratio);
+$lh-950: calc($fs-950 * $golden-ratio);
+$lh-1000: calc($fs-1000 * $golden-ratio);
+$lh-1050: calc($fs-1050 * $golden-ratio);
+$lh-1100: calc($fs-1100 * $golden-ratio);
+// end: line-height

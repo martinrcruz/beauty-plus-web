@@ -1,0 +1,103 @@
+// https://piccalil.li/blog/a-modern-css-reset
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    font-family: system-ui, sans-serif;
+
+    scroll-behavior: smooth;
+    height: auto;
+    min-height: 100%;
+    overflow-y: scroll; /* Siempre mostrar la barra de desplazamiento vertical */
+    overflow-x: hidden; /* Ocultar la barra de desplazamiento horizontal si no es necesaria */
+}
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* title text-wrap balanced */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balanced;
+}
+
+/* max-width 65 characters & text-wrap pretty*/
+p,
+li,
+figcaption {
+    text-wrap: pretty;
+}
+
+/* container-type_ inline-size */
+header,
+footer,
+main,
+section,
+article {
+    container-type: inline-size;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

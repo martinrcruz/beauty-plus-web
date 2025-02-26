@@ -1,0 +1,23 @@
+.block-responsive-picture {
+    > picture,
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.block-two-columns {
+    display: flex;
+    flex-direction: row;
+
+    > div {
+        flex: 1 !important;
+    }
+
+    &__two-thirds {
+        flex: 2;
+    }
+}
+

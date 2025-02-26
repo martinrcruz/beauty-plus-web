@@ -1,0 +1,70 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.header {
+    $header-height: 5rem;
+
+    background-color: variables.$header-bg;
+    color: variables.$header-color;
+
+    border-bottom: 1px solid variables.$header-color;
+
+    h1 {
+        display: none;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        width: min(100%, variables.$default-width);
+        height: $header-height;
+        padding-block: 0.5rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__left,
+    &__right {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:1rem;
+    }
+
+    &__left {
+        justify-content: flex-start;
+    }
+
+    &__right {
+        justify-content: flex-end;
+        padding-block: 1rem;
+    }
+
+    &__brand {
+        display: block;
+        height: 100%;
+        span {
+            display: none;
+        }
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+    }
+    &__firma {
+        height: 100%;
+        padding-block: .75rem;
+        padding-inline-start: 4rem;
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+    }
+
+}

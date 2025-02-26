@@ -1,0 +1,54 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.text-block-1{
+
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 3rem;
+    background-color: white;
+
+    p{
+        font-family: fonts.$ff-primary;
+        color: variables.$default-color;
+        font-size: fonts.$fs-500;
+        line-height: fonts.$lh-500;
+        text-align: left;
+        padding-bottom: 2rem;
+    }
+}
+
+.text-block-2{
+
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background-color: transparent;
+
+    p{
+        font-family: fonts.$ff-primary;
+        color: variables.$default-color;
+        font-size: fonts.$fs-500;
+        line-height: fonts.$lh-400;
+        text-align: left;
+        padding-bottom: 2rem;
+    }
+}
+.text-block-3{
+
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background-color: transparent;
+
+    p{
+        font-family: fonts.$ff-primary;
+        color: variables.$default-color;
+        font-size: fonts.$fs-600;
+        line-height: fonts.$lh-500;
+        text-align: left;
+        padding-bottom: 2rem;
+    }
+}

@@ -1,0 +1,251 @@
+@use '../../abstracts/variables';
+@use '../../core/colors';
+@use '../../core/fonts';
+@use '../../core/bp';
+@use './contacto_variables' as contacto;
+
+
+.contacto {
+    background-color: contacto.$bg;
+    margin-bottom: 2rem;
+    position: relative;
+    
+    
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2rem;
+        background-color: variables.$negro5;
+    }
+    
+    &__in-page{
+        background-color: variables.$color2;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background-color: none;
+        }
+        
+    }
+
+    
+    &__wrapper {
+        color: contacto.$color;
+        width: min(100%, variables.$default-width);
+        height: 100%;
+
+        margin: 0 auto;
+        padding: 10rem 3rem 3rem 3rem;
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__whatsapp{
+        position: absolute;
+        top: -1.5rem;
+        right: 8rem;
+        width: 3rem;
+        aspect-ratio: 1 / 1;
+        padding:0;
+        transform: scale(1) translateX(0) translateY(0);
+        transition: transform 300ms ease, filter 300ms ease;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        z-index: 100;
+        
+        &:hover{
+            transform: scale(1.5) translateX(5px) translateY(-5px);
+            filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.3));
+            
+        }
+        
+        svg{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+
+    }
+
+    &__form{
+        width: min(500px, 100%);
+
+        h1{
+            font-family: fonts.$ff-primary;
+            font-size: fonts.$fs-750;
+            line-height: fonts.$fs-750;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            width: 100%;            
+        }
+
+        &-button{
+            margin-top: 2rem;
+        }
+
+
+
+    }
+    
+    &__info{
+        width: min(400px, 100%);
+
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       align-items: center;
+       padding-bottom: 3rem;
+
+       &-firma{
+
+        svg{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+       }
+
+       &-links{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top:2rem;
+        padding-inline: 2rem;
+           a, p{
+            width: 100%;
+            font-family: fonts.$ff-primary;
+            font-size: fonts.$fs-500;
+            line-height: fonts.$lh-450;
+            text-align: center;
+            margin-bottom: .5rem;
+           }
+
+       }
+
+
+    }
+
+    // &__form {
+    //     width: min(100%, variables.$default-width);
+    //     background-color: $bg;
+    //     border-radius: 1.5rem;
+    //     &-block {
+    //         display: flex;
+    //         flex-direction: column;
+    //     }
+    //     &-mensaje {
+    //         width: 100%;
+    //         padding: 2rem 1rem;
+    //         font-size: 125%;
+
+    //         color: white;
+    //         text-align: center;
+    //     }
+    //     & form {
+    //         width: min(100%, 50rem);
+    //         padding: 3rem;
+    //         margin: 0 auto;
+
+    //         .invalid-feedback,
+    //         .valid-feedback {
+    //             display: none;
+    //             padding-top: 0.5rem;
+    //         }
+
+    //         & input,
+    //         & label,
+    //         & textarea,
+    //         & fieldset,
+    //         & button {
+    //             border: none;
+    //         }
+
+    //         & input,
+    //         & textarea {
+    //             background-color: white;
+    //             padding: 0.5rem 0.75rem;
+    //             border-radius: 0.25rem;
+    //             $focusedColor: darken(colors.$cPrimary, 40%);
+    //             color: $focusedColor;
+
+    //             &:focus,
+    //             &:focus-within {
+    //                 outline: $outline;
+    //             }
+
+    //             &::placeholder {
+    //                 color: darken(colors.$cPrimary, 20%);
+    //             }
+    //             &:focus::placeholder {
+    //                 color: $focusedColor;
+    //             }
+
+    //             &:not(:placeholder-shown):valid {
+    //                 outline: $outline-valid;
+
+    //                 ~ .valid-feedback {
+    //                     display: block;
+    //                     color: rgb(81, 255, 0);
+    //                 }
+    //             }
+    //             &:not(:placeholder-shown):invalid {
+    //                 outline: $outline-invalid;
+    //                 ~ .invalid-feedback {
+    //                     display: block;
+    //                     color: rgb(255, 230, 0);
+    //                 }
+    //             }
+    //         }
+
+    //         & fieldset {
+    //             display: flex;
+    //             flex-direction: column;
+    //             row-gap: 1rem;
+    //             margin-bottom: 2rem;
+    //         }
+    //         & label {
+    //             color: white;
+    //             padding-bottom: 0.25rem;
+    //             font-size: fonts.$fs-300;
+    //             font-weight: bold;
+    //         }
+
+    //         & button[type='submit'] {
+    //             color: white;
+    //             font-weight: bold;
+    //             font-size: 120%;
+    //             background-color: darken(colors.$cPrimary, 20%);
+    //             padding: 1rem;
+    //             border-radius: 0.25rem;
+
+    //             &:hover,
+    //             &:focus {
+    //                 outline: $outline;
+    //                 background-color: darken(colors.$cPrimary, 15%);
+    //             }
+
+    //             &:disabled {
+    //                 background-color: color.adjust(
+    //                     colors.$cPrimary,
+    //                     $saturation: -100%
+    //                 );
+    //                 cursor: not-allowed;
+    //             }
+    //         }
+    //     }
+    // }
+}

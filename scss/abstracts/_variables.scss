@@ -1,0 +1,78 @@
+@use '../core/fonts';
+@use '../core/colors';
+
+$default-width: 75rem;
+
+
+$gris1: #d4d7d9;
+$negro1: #333;
+$negro2: #000;
+$negro3: #555;
+$negro4: #D1D1D1;
+$negro5: #aaa;
+$negro6: #dfdfdf;
+
+$color1: #C0A65F;
+$color2: #EDE4CD;
+$color3: #EDEAE1;
+$color4: #836000;
+
+$whatsapp-color: #25D366;
+
+$descriptionsFontSize: fonts.$fs-550;
+$descriptionFontFamily: fonts.$ff-primary;
+$descriptionLineHeight: fonts.$lh-500;
+$descriptionColor: $negro2;  
+$descriptionTextAlign: left;
+
+// -- globals
+$default-color: $negro2;
+$default-fs: fonts.$fs-400;
+$default-lh: fonts.$lh-400;
+
+// -- contact bar
+$contactbar-bg: $gris1;
+$contactbar-color: $negro1;
+
+// -- hero
+$hero-bg: #d9d9d9;
+$hero-color: $default-color;
+
+// -- header
+$header-bg: white;
+$header-color: $negro1;
+
+// -- burger menu
+$burger-color: $negro1;
+
+// -- access
+$access-button-color: $negro2;
+$access-button-bg: $color3;
+$access-button-icon-color: $color1;
+
+$access-button-signup-color: white;
+$access-button-signup-bg: $negro2;
+
+// -- buttons
+$button-ff: fonts.$ff-secondary;
+$button-fs: fonts.$fs-500;
+$button-lh: fonts.$lh-500;
+$button-bg: $negro2;
+$button-color: white;
+
+// --- nav
+$ff-navbar: fonts.$ff-primary;
+$bg-navbar-color: white;
+$text-navbar-color: $negro2;
+
+$ff-titles: fonts.$ff-secondary;
+$titles-c: white;
+
+$fs-brand-h1: fonts.$fs-750;
+$fs-brand-h2: fonts.$fs-500;
+
+$fs-menu-item: fonts.$fs-200;
+
+// --- footer
+$footer-color: white;
+$footer-bg-color: colors.$c-20;

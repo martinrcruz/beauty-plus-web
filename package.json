@@ -1,0 +1,55 @@
+{
+    "name": "clubbeautyplus",
+    "version": "1.0.0",
+    "description": "Club Beauty Plus",
+    "main": "index.js",
+    "scripts": {
+        "watch:sass:index": "sass --watch --source-map --no-stop-on-error --color scss/index.scss:scss/_css/index.css",
+        "watch:postcss:index": "postcss scss/_css/index.css -o _assets/css/index.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:niveles": "sass --watch --source-map --no-stop-on-error --color scss/niveles.scss:scss/_css/niveles.css",
+        "watch:postcss:niveles": "postcss scss/_css/niveles.css -o _assets/css/niveles.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:puntos": "sass --watch --source-map --no-stop-on-error --color scss/puntos.scss:scss/_css/puntos.css",
+        "watch:postcss:puntos": "postcss scss/_css/puntos.css -o _assets/css/puntos.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:ventajas": "sass --watch --source-map --no-stop-on-error --color scss/ventajas.scss:scss/_css/ventajas.css",
+        "watch:postcss:ventajas": "postcss scss/_css/ventajas.css -o _assets/css/ventajas.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:promociones": "sass --watch --source-map --no-stop-on-error --color scss/promociones.scss:scss/_css/promociones.css",
+        "watch:postcss:promociones": "postcss scss/_css/promociones.css -o _assets/css/promociones.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:equivalencias": "sass --watch --source-map --no-stop-on-error --color scss/equivalencias.scss:scss/_css/equivalencias.css",
+        "watch:postcss:equivalencias": "postcss scss/_css/equivalencias.css -o _assets/css/equivalencias.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:colaboraciones": "sass --watch --source-map --no-stop-on-error --color scss/colaboraciones.scss:scss/_css/colaboraciones.css",
+        "watch:postcss:colaboraciones": "postcss scss/_css/colaboraciones.css -o _assets/css/colaboraciones.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:recomendaciones": "sass --watch --source-map --no-stop-on-error --color scss/recomendaciones.scss:scss/_css/recomendaciones.css",
+        "watch:postcss:recomendaciones": "postcss scss/_css/recomendaciones.css -o _assets/css/recomendaciones.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:acceso": "sass --watch --source-map --no-stop-on-error --color scss/acceso.scss:scss/_css/acceso.css",
+        "watch:postcss:acceso": "postcss scss/_css/acceso.css -o _assets/css/acceso.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "watch:sass:contacto": "sass --watch --source-map --no-stop-on-error --color scss/contacto.scss:scss/_css/contacto.css",
+        "watch:postcss:contacto": "postcss scss/_css/contacto.css -o _assets/css/contacto.css -u postcss-pxtorem autoprefixer --source-map --watch",
+        "start": "npm-run-all --parallel watch:*:*",
+
+        "build:sass": "sass --no-source-map --no-stop-on-error --color scss/index.scss:scss/_css/index.css",
+        "build:postcss": "postcss scss/_css/index.css -o _assets/css/index.css -u postcss-pxtorem autoprefixer cssnano --no-map",
+        "optimize": "npm-run-all build:sass build:postcss",
+        "terser": "terser js/*.js -o _assets/js/index.min.js --compress --mangle"
+    },
+    "keywords": [],
+    "author": "Jorge Luján Medina",
+    "license": "ISC",
+    "browserslist": [
+        "defaults",
+        "not IE 11",
+        "last 6 versions"
+    ],
+    "dependencies": {
+        "autoprefixer": "^10.4.19",
+        "cssnano": "^6.1.2",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^11.0.0",
+        "postcss-pxtorem": "^6.1.0",
+        "sass": "^1.75.0"
+    },
+    "devDependencies": {
+        "critical": "^7.2.0",
+        "terser": "^5.32.0"
+    }
+}

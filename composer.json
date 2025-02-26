@@ -1,0 +1,20 @@
+{
+    "name": "materiad/clubbeautyplus",
+    "description": "Club Beauty plus",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tcr\\": "_src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jorge Luján Medina",
+            "email": "jorgelujanm@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

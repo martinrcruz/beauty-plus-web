@@ -1,0 +1,14 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    // display: flex;
+    // flex-direction: column;
+    //align-items: flex-start;
+    //flex: 1;
+}

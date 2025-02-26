@@ -1,0 +1,25 @@
+@use '../abstracts/variables';
+@use '../core/colors';
+@use '../core/fonts';
+@use '../core/bp';
+
+.poweredby {
+    width: 100%;
+    text-align: right;
+    height: 2rem;
+    padding-inline: 2rem;
+    background-color: black;
+    font-size: fonts.$fs-200;
+}
+
+@media screen and (max-width: bp.$mobile-max) {
+    .poweredby {
+        display: flex;
+        width: 100%;
+        text-align: center;
+        min-height: 4rem;
+        padding-inline: 1rem;
+        background-color: black;
+        font-size: fonts.$fs-150;
+    }
+}

@@ -1,0 +1,51 @@
+
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.logo{
+    
+    font-size: fonts.$fs-800;
+    line-height: fonts.$lh-750;
+    margin-bottom: 3rem;
+    
+    &__pb-1{
+        display: block;
+        margin-bottom: 0rem;
+    }
+    &__bold{
+        font-weight: bold;
+    }
+    &__center{
+        text-align: center;
+    }
+
+    &__texto{
+        font-family: fonts.$ff-secondary;
+        font-weight: bold;
+        color: inherit;
+        position: relative;
+        display: inline-block;
+
+        &-stars{
+            position: relative;
+            display: inline-block;
+            
+            &-svg{
+                display: block;
+                position: absolute;
+                bottom:2.5rem;
+                right:-1rem;
+                color: inherit;
+                width: 3rem;
+                
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                }
+            }
+        }
+    }
+}

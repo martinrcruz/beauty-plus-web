@@ -1,0 +1,1033 @@
+@charset "UTF-8";
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+  height: auto;
+  min-height: 100%;
+  overflow-y: scroll; /* Siempre mostrar la barra de desplazamiento vertical */
+  overflow-x: hidden; /* Ocultar la barra de desplazamiento horizontal si no es necesaria */
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* title text-wrap balanced */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balanced;
+}
+
+/* max-width 65 characters & text-wrap pretty*/
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+}
+
+/* container-type_ inline-size */
+header,
+footer,
+main,
+section,
+article {
+  container-type: inline-size;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Abel Pro";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Abel Pro"), url("../fonts/abel_pro/woff2/abel_pro.woff2") format("woff2"), url("../fonts/abel_pro/woff/abel_pro.woff") format("woff");
+}
+@font-face {
+  font-family: "Abel Pro";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("Abel Pro"), url("../fonts/abel_pro/woff2/abel_pro_bold.woff2") format("woff2"), url("../fonts/abel_pro/woff/abel_pro_bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Terminal Dosis";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Terminal Dosis"), url("../fonts/terminal-dosis/woff2/terminal-dosis.regular.woff2") format("woff2"), url("../fonts/terminal-dosis/woff/terminal-dosis.regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Terminal Dosis";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("Terminal Dosis"), url("../fonts/terminal-dosis/woff2/terminal-dosis.bold.woff2") format("woff2"), url("../fonts/terminal-dosis/woff/terminal-dosis.bold.woff") format("woff");
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  width: 100vw;
+  min-height: 100dvh;
+  flex-direction: column;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  font-family: "Abel Pro", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8202882373rem;
+  color: hsl(0, 0%, 46%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+p,
+a {
+  font-size: 1.125rem;
+  line-height: 1.8202882373rem;
+  text-decoration: none;
+  color: currentColor;
+}
+
+p {
+  color: hsl(0, 0%, 13%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0, 0%, 13%);
+  font-family: "Terminal Dosis", sans-serif;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  border: none;
+  background-color: ghostwhite;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 250ms ease-in;
+}
+button:hover {
+  background-color: rgb(222.5, 222.5, 255);
+}
+
+.button {
+  display: flex;
+  font-display: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Terminal Dosis", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.4270509831rem;
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #000;
+  padding: 0.75rem 2rem;
+  overflow: hidden;
+  border-radius: 100vw;
+  border: none;
+  transition: color 250ms ease-out;
+  z-index: 0;
+  position: relative;
+}
+.button::after {
+  position: absolute;
+  content: "";
+  inset: 0 -1rem 0 -1rem;
+  background-color: white;
+  z-index: -1;
+  transform: skewX(-45deg) translateX(-105%);
+  transition: transform 250ms ease-out;
+}
+.button:hover {
+  color: #000 !important;
+}
+.button:hover::after {
+  transform: skewX(-45deg) translateX(0);
+}
+
+.contactbar {
+  width: 100%;
+  background-color: #d4d7d9;
+  border-bottom: 1px solid #333;
+  max-height: 3rem;
+}
+.contactbar__wrapper {
+  margin: 0 auto;
+  width: min(75rem, 100%);
+  background-color: #d4d7d9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.contactbar__wrapper a {
+  height: fit-content;
+  color: #333;
+  font-size: 0.938rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+}
+.contactbar__wrapper a svg {
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contactbar__wrapper a {
+    flex: 1;
+    padding-block: 0.7rem;
+  }
+  .contactbar__wrapper a span {
+    display: none;
+  }
+}
+.hero {
+  display: flex;
+  width: 100%;
+  min-height: 850px;
+  max-height: 850px;
+  height: 850px;
+  background-color: #d9d9d9;
+  color: #000;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  position: relative;
+}
+.hero__whatsapp {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 15em;
+  width: 3rem;
+  aspect-ratio: 1/1;
+  padding: 0;
+  transform: scale(1) translateX(0) translateY(0);
+  transition: transform 300ms ease, filter 300ms ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  z-index: 9999;
+}
+.hero__whatsapp:hover {
+  transform: scale(1.5) translateX(5px) translateY(-5px);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.3));
+}
+.hero__whatsapp svg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+.hero__barra {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  height: 120px;
+  background-color: #C49F5C;
+}
+.hero__barra-firma {
+  margin: 0 auto;
+  width: min(75rem, 100%);
+  height: 100%;
+  padding-block: 1.5rem;
+}
+.hero__barra-firma svg {
+  margin-left: 24rem;
+  color: white;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+}
+.hero__wrapper {
+  width: min(75rem, 100%);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.hero__wrapper * {
+  color: #000;
+}
+.hero__content {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 200px;
+  left: 12rem;
+  width: 21rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero__content-logo {
+  width: 100%;
+  padding-inline: 0.5rem;
+}
+.hero__content-logo svg {
+  width: 100%;
+  height: auto;
+}
+.hero__content-logo h1 {
+  display: none;
+}
+.hero__content-text {
+  padding-top: 4rem;
+  text-align: center;
+}
+.hero__content-text h2 {
+  font-family: "Abel Pro", sans-serif;
+  font-size: 2.9rem;
+  padding-bottom: 3rem;
+  position: relative;
+}
+.hero__content-text h2::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 1rem 0;
+  transform: scaleX(60%);
+  border-bottom: 2px solid black;
+}
+.hero__content-text p {
+  font-family: "Abel Pro", sans-serif;
+  font-size: 1.6rem;
+  color: #555;
+}
+.hero__man {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 12rem;
+  height: 230px;
+}
+.hero__man img {
+  width: 100%;
+  height: 100%;
+}
+.hero__woman {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  top: 0;
+  right: 0;
+}
+.hero__woman img {
+  width: 100%;
+  height: 100%;
+}
+.hero__cta {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-block: 0.5rem;
+}
+
+.header {
+  background-color: white;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+.header h1 {
+  display: none;
+}
+.header__wrapper {
+  margin: 0 auto;
+  width: min(100%, 75rem);
+  height: 5rem;
+  padding-block: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+.header__left, .header__right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.header__left {
+  justify-content: flex-start;
+}
+.header__right {
+  justify-content: flex-end;
+  padding-block: 1rem;
+}
+.header__brand {
+  display: block;
+  height: 100%;
+}
+.header__brand span {
+  display: none;
+}
+.header__brand svg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+.header__firma {
+  height: 100%;
+  padding-block: 0.75rem;
+  padding-inline-start: 4rem;
+}
+.header__firma svg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+
+.main {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  font-size: 3rem;
+  line-height: 4.2473392205rem;
+  margin-bottom: 3rem;
+}
+.logo__pb-1 {
+  display: block;
+  margin-bottom: 0rem;
+}
+.logo__bold {
+  font-weight: bold;
+}
+.logo__center {
+  text-align: center;
+}
+.logo__texto {
+  font-family: "Terminal Dosis", sans-serif;
+  font-weight: bold;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+}
+.logo__texto-stars {
+  position: relative;
+  display: inline-block;
+}
+.logo__texto-stars-svg {
+  display: block;
+  position: absolute;
+  bottom: 2.5rem;
+  right: -1rem;
+  color: inherit;
+  width: 3rem;
+}
+.logo__texto-stars-svg svg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0 0 0 0;
+  transform: translateX(-100%);
+  transition: transform 250ms ease-out, background-color 250ms ease-in-out;
+  z-index: 999;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu__wrapper {
+  flex: 1;
+  background-color: rgba(209, 209, 209, 0.9);
+  width: min(100%, 570px);
+  padding-block: 3rem;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu__header {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  border-bottom: 5px solid #666;
+}
+.mobile-menu__header::after {
+  position: absolute;
+  content: "";
+  padding-bottom: 1rem;
+  inset: 0 8rem 0 0;
+}
+.mobile-menu__header h1 {
+  font-family: "Terminal Dosis", sans-serif;
+  font-size: 2.625rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.mobile-menu__close-button {
+  position: absolute;
+  top: -1.3rem;
+  right: 0;
+  width: 3.5rem;
+  padding: 0.75rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  border-radius: 100vw;
+  border: 4px solid black;
+  transition: background-color 250ms ease-in-out;
+}
+.mobile-menu__close-button:hover {
+  background-color: #C0A65F;
+}
+.mobile-menu__close-button svg {
+  color: #666;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+.mobile-menu__body {
+  width: 100%;
+  margin-top: 1rem;
+  padding-right: 8rem;
+}
+.mobile-menu__body > ul {
+  list-style: none;
+  padding: 0;
+}
+.mobile-menu__body > ul > li {
+  margin: 1rem 0;
+}
+.mobile-menu__body > ul > li > a {
+  font-size: 2.25rem;
+  line-height: 3.6405764747rem;
+  color: #000;
+  font-weight: bold;
+  max-width: 100%;
+  display: block;
+  padding: 0.5rem;
+  transform: translateX(0);
+  position: relative;
+  transition: color 300ms ease-out, transform 600ms ease-out;
+}
+.mobile-menu__body > ul > li > a:hover {
+  color: #836000;
+  transform: translateX(1rem);
+}
+.mobile-menu__body > ul > li > a::before {
+  position: absolute;
+  content: "▶";
+  font-size: 50%;
+  left: -1rem;
+}
+.mobile-menu__submenu {
+  list-style: none;
+  padding: 0;
+  margin-left: 6rem;
+}
+.mobile-menu__submenu-hidden {
+  display: none;
+}
+.mobile-menu__submenu > li > a {
+  font-size: 1.688rem;
+  line-height: 2.4270509831rem;
+  color: #000;
+  max-width: 100%;
+  display: block;
+  padding: 0.5rem;
+  position: relative;
+  transform: translateX(0);
+  position: relative;
+  transition: color 300ms ease-out, transform 600ms ease-out;
+}
+.mobile-menu__submenu > li > a:hover {
+  color: #836000;
+  transform: translateX(1rem);
+}
+.mobile-menu__submenu > li > a:hover::before {
+  position: absolute;
+  content: ">";
+  font-size: 50%;
+  font-weight: bold;
+  left: -1rem;
+}
+.mobile-menu__open {
+  transform: translateX(0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.access-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 2rem;
+  box-sizing: border-box;
+  background-color: #EDEAE1;
+  border-radius: 100vw;
+  padding-block: 3px;
+}
+.access-button a {
+  display: flex;
+  height: 100%;
+  color: #000;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 1px;
+  padding-block: 1px;
+  gap: 0.5rem;
+}
+.access-button a .access-button-text {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  color: #000;
+  padding-left: 0.5rem;
+}
+.access-button a .access-button-icon {
+  display: block;
+  height: 100%;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.access-button a .access-button-icon svg {
+  color: #C0A65F;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+.access-button__signup {
+  background-color: #000;
+  color: white;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+.access-button__signup > a {
+  color: inherit;
+  font-weight: bold;
+  padding: 0;
+}
+.access-button__signup > a > .access-button-text {
+  padding: 0;
+  color: inherit;
+}
+
+.burger-menu {
+  height: 100%;
+  aspect-ratio: 1/1;
+  padding-block: 0.25rem;
+  cursor: pointer;
+}
+.burger-menu svg {
+  color: #333;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.form h1 {
+  font-family: "Abel Pro", sans-serif;
+  font-size: 2.625rem;
+  line-height: 2.625rem;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.form-button {
+  margin-top: 2rem;
+}
+.form label {
+  display: none;
+}
+.form input, .form textarea {
+  font-family: "Abel Pro", sans-serif;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-inline: 1rem;
+}
+.form button[type=submit] {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 160%;
+}
+
+.text-block-1 {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 3rem;
+  background-color: white;
+}
+.text-block-1 p {
+  font-family: "Abel Pro", sans-serif;
+  color: #000;
+  font-size: 1.5rem;
+  line-height: 2.4270509831rem;
+  text-align: left;
+  padding-bottom: 2rem;
+}
+
+.text-block-2 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background-color: transparent;
+}
+.text-block-2 p {
+  font-family: "Abel Pro", sans-serif;
+  color: #000;
+  font-size: 1.5rem;
+  line-height: 1.8202882373rem;
+  text-align: left;
+  padding-bottom: 2rem;
+}
+
+.text-block-3 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background-color: transparent;
+}
+.text-block-3 p {
+  font-family: "Abel Pro", sans-serif;
+  color: #000;
+  font-size: 1.875rem;
+  line-height: 2.4270509831rem;
+  text-align: left;
+  padding-bottom: 2rem;
+}
+
+.section-custom {
+  width: 100%;
+}
+.section-custom__wrapper {
+  width: 75rem;
+  margin: 0 auto;
+}
+.section-custom__wrapper-style-1 {
+  padding-top: 4rem;
+}
+.section-custom__title {
+  font-family: "Abel Pro", sans-serif;
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 4.2473392205rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.section-custom__subtitle {
+  font-family: "Abel Pro", sans-serif;
+  font-weight: normal;
+  font-size: 2.625rem;
+  line-height: 3.2943172011rem;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.acceso {
+  background-color: white;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.acceso__wrapper {
+  margin: 0 auto;
+  padding-block: 4rem;
+  width: min(100%, 75rem);
+}
+.acceso__form {
+  background-color: #EDE4CD;
+  padding-inline: 2rem;
+  height: 20rem;
+  min-height: 20rem;
+  max-height: 20rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.acceso__form-form {
+  width: min(100%, 30rem);
+}
+.acceso__form-form > h2 {
+  font-size: 1.875rem;
+  line-height: 3.0338137289rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.acceso__form-side {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-block: 2rem;
+  height: 150%;
+}
+.acceso__form-side svg {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: right;
+  margin-left: auto;
+}
+
+.contacto {
+  background-color: #D1D1D1;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.contacto::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background-color: #aaa;
+}
+.contacto__in-page {
+  background-color: #EDE4CD;
+}
+.contacto__in-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: none;
+}
+.contacto__wrapper {
+  color: #000;
+  width: min(100%, 75rem);
+  height: 100%;
+  margin: 0 auto;
+  padding: 10rem 3rem 3rem 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+.contacto__whatsapp {
+  position: absolute;
+  top: -1.5rem;
+  right: 8rem;
+  width: 3rem;
+  aspect-ratio: 1/1;
+  padding: 0;
+  transform: scale(1) translateX(0) translateY(0);
+  transition: transform 300ms ease, filter 300ms ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  z-index: 100;
+}
+.contacto__whatsapp:hover {
+  transform: scale(1.5) translateX(5px) translateY(-5px);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.3));
+}
+.contacto__whatsapp svg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+.contacto__form {
+  width: min(500px, 100%);
+}
+.contacto__form h1 {
+  font-family: "Abel Pro", sans-serif;
+  font-size: 2.625rem;
+  line-height: 2.625rem;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.contacto__form-button {
+  margin-top: 2rem;
+}
+.contacto__info {
+  width: min(400px, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+.contacto__info-firma svg {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+.contacto__info-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-inline: 2rem;
+}
+.contacto__info-links a, .contacto__info-links p {
+  width: 100%;
+  font-family: "Abel Pro", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.0225424859rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  width: 100%;
+  color: white;
+  background-color: #000;
+}
+.footer__wrapper {
+  color: inherit;
+  margin: 0 auto;
+  width: min(100%, 75rem);
+  height: 100%;
+  padding: 4rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+.footer__firma {
+  width: min(400px, 100%);
+  margin: 0 auto;
+}
+.footer__links ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*# sourceMappingURL=acceso.css.map */

@@ -1,0 +1,167 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.mobile-menu {
+    $mobile-menu-item-color: variables.$negro2;
+    $mobile-menu-item-color-hover: variables.$color4;
+    
+    position: fixed;
+    inset: 0 0 0 0;
+    transform: translateX(-100%);
+    transition: transform 250ms ease-out, background-color 250ms ease-in-out;
+    z-index: 999;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0);
+
+    display: flex;
+    flex-direction: column;
+    
+    &__wrapper {
+        flex:1;
+        background-color: rgba(variables.$negro4, .9);
+        width: min(100%, 570px);
+        padding-block: 3rem;
+        padding-left: 3rem;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        border-bottom: 5px solid #666;
+
+        &::after {
+            position: absolute;
+            content: '';
+            padding-bottom: 1rem;
+            inset: 0 8rem 0 0;
+           // border-bottom: 5px solid #666;
+        }
+
+        h1 {
+            font-family: fonts.$ff-secondary;
+            font-size: fonts.$fs-750;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &__close-button {
+        position: absolute;
+        top: -1.3rem;
+        right: 0;
+        width: 3.5rem;
+        padding: 0.75rem;
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        border-radius: 100vw;
+        border: 4px solid black;
+        transition: background-color 250ms ease-in-out;
+        &:hover {
+            background-color: variables.$color1;
+        }
+
+        svg {
+            color: #666;
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+    }
+
+    &__body {
+        width: 100%;
+        margin-top: 1rem;
+        padding-right: 8rem;
+
+        > ul {
+            list-style: none;
+            padding: 0;
+
+            > li {
+                margin: 1rem 0;
+
+                > a {
+                    font-size: fonts.$fs-700;
+                    line-height: fonts.$lh-700;
+                    color: variables.$negro2;
+                    font-weight: bold;
+                    max-width: 100%;
+                    display: block;
+                    padding: 0.5rem;
+                    transform: translateX(0);
+                    position: relative;
+                    
+                    transition: color 300ms ease-out, transform 600ms ease-out;
+                    &:hover {
+                        color: $mobile-menu-item-color-hover;
+                        transform: translateX(1rem);
+                    }
+
+                    &::before{
+                        position: absolute;
+                        content: '\25B6';
+                        font-size: 50%;
+                        left: -1rem;
+                    }
+                }
+            }
+        }
+
+    
+    }
+
+    &__submenu{
+            list-style: none;
+            padding: 0;
+            margin-left: 6rem;
+            
+            &-hidden{
+                display: none;
+            }
+
+            > li {
+                //margin-block: 1rem; 
+
+                > a {
+                    font-size: fonts.$fs-550;
+                    line-height: fonts.$lh-500;
+                    color: variables.$negro2;
+                    max-width: 100%;
+                    display: block;
+                    padding: 0.5rem;
+                    position:relative;
+
+                    transform: translateX(0);
+                    position: relative;
+                    
+                    transition: color 300ms ease-out, transform 600ms ease-out;
+                    
+                    
+                    &:hover {
+                        color: $mobile-menu-item-color-hover;
+                        transform: translateX(1rem);
+                        &::before{
+                            position: absolute;
+                            content: '>';
+                            font-size: 50%;
+                            font-weight: bold;
+                            left: -1rem;
+                        }
+                    }
+                }
+            }
+    }
+
+    &__open {
+        transform: translateX(0);
+        background-color: rgba(0,0,0,.5);
+
+    }
+}

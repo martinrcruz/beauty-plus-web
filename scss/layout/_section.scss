@@ -1,0 +1,13 @@
+@use '../core/fonts';
+@use '../core/colors';
+@use '../abstracts/variables';
+@use '../core/bp';
+
+.section{
+    width: 100%;
+
+    &__wrapper{
+           width: variables.$default-width; 
+           margin: 0 auto;
+    }
+}

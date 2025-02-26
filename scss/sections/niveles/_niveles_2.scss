@@ -1,0 +1,21 @@
+@use '../../core/fonts';
+@use '../../core/colors';
+@use '../../abstracts/variables';
+@use '../../core/bp';
+@use './niveles_variables' as niveles;
+
+
+.niveles-2 {
+    background-color: niveles.$bg;
+    position: relative;
+
+    &__wrapper {
+        width: min(100%, variables.$default-width);
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-top: 2rem;
+    }
+}
