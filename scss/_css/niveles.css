@@ -361,7 +361,7 @@ button:hover {
 }
 .header__left, .header__right {
   flex: 1;
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   gap: 1rem;
@@ -777,8 +777,8 @@ button:hover {
   align-items: flex-end;
 }
 .niveles__content-header {
-  width: 27rem;
-  margin-right: 12rem;
+  /* width: 27rem;
+  margin-right: 12rem; */
 }
 .niveles__content-body {
   width: 27rem;

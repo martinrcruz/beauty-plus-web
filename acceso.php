@@ -22,9 +22,7 @@ require_once('./_requires/common.php');
                 renderSectionSubpageHeader('Acceso para socios');
                 ?>
                 <div class="text-block-3">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum perferendis quasi velit odit
-                        minus, est provident explicabo ab repudiandae atque. Temporibus repudiandae placeat tempora
-                        tempore architecto adipisci quibusdam velit fugiat.</p>
+                    
                 </div>
                 <article class="acceso__form">
                     <div class="acceso__form-form">
