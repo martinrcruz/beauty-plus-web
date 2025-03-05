@@ -441,7 +441,7 @@ button:hover {
 }
 .header__left, .header__right {
   flex: 1;
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   gap: 1rem;

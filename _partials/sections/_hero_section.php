@@ -34,7 +34,7 @@ require_once('./_requires/common.php');
             <img src="img/hero/hero_man.png" alt="">
         </div>
         <div class="hero__woman">
-            <img src="img/hero/hero_woman.png" alt="">
+            <img style src="img/hero/hero_woman.png" alt="">
         </div>
     </div>
 </section>
